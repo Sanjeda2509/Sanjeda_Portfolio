@@ -1,0 +1,177 @@
+/* ============================================================
+   Personal Portfolio - Sanjeda Sharmin
+   Shared stylesheet for all six pages
+   ============================================================ */
+
+/* ---------- Global reset & base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: #f5f7fa;
+  color: #2b3945;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+h1, h2, h3 { color: #1f3a5f; }
+
+.page-title { text-align: center; margin-bottom: 8px; }
+.page-intro { text-align: center; color: #5a6b7b; margin-bottom: 30px; }
+
+/* ---------- Navigation bar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px 5%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #2b3945;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo { width: 44px; height: 44px; }
+
+.nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #2b3945;
+  border-radius: 6px;
+}
+
+.nav-links a:hover { background-color: #eaf1fb; color: #1f6feb; }
+.nav-links a.active { background-color: #1f6feb; color: #ffffff; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #1f6feb;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #1f6feb;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn:hover { background-color: #1559b8; border-color: #1559b8; }
+
+.btn-secondary { background-color: #ffffff; color: #1f6feb; }
+.btn-secondary:hover { background-color: #eaf1fb; color: #1559b8; }
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Home page ---------- */
+.hero { text-align: center; padding: 40px 10px; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+.hero p { max-width: 720px; margin: 0 auto 25px; }
+.hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+.mission { margin-top: 40px; border-left: 6px solid #1f6feb; }
+.mission h2 { margin-bottom: 10px; }
+
+/* ---------- About page ---------- */
+.about-layout { display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap; }
+.about-photo { flex: 0 0 280px; }
+.about-photo img { width: 100%; border-radius: 8px; display: block; }
+.about-text { flex: 1 1 350px; }
+.about-text h2 { margin-bottom: 10px; }
+.about-text p { margin-bottom: 12px; }
+
+/* ---------- Projects & Services grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.card h3 { margin: 15px 0 5px; }
+.card .tech { color: #1f6feb; font-size: 0.9rem; margin-bottom: 10px; }
+.card p { margin-bottom: 8px; }
+
+/* ---------- Education page ---------- */
+.edu-card { margin-bottom: 20px; }
+.edu-card h3 { margin-bottom: 4px; }
+.edu-card .dates { color: #1f6feb; font-weight: bold; margin-bottom: 6px; }
+.edu-card ul { margin: 10px 0 0 20px; }
+
+/* ---------- Contact page ---------- */
+.contact-layout { display: flex; gap: 25px; flex-wrap: wrap; align-items: flex-start; }
+.contact-info { flex: 1 1 280px; }
+.contact-info h2, .contact-form h2 { margin-bottom: 15px; }
+.contact-info ul { list-style: none; }
+.contact-info li { margin-bottom: 12px; }
+.contact-info a { color: #1f6feb; }
+
+.contact-form { flex: 1 1 380px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c3ccd6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus { outline: 2px solid #1f6feb; border-color: #1f6feb; }
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: #1f3a5f;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 700px) {
+  .navbar { flex-direction: column; }
+  .nav-links { justify-content: center; }
+  .hero h1 { font-size: 1.7rem; }
+}
